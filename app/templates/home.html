@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{%block content%}
+    {%for i in posts[: : -1]%}
+    <div class="container mt-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">{{ i.title }}</h2>
+                <p class="text-muted">
+                    <small>By <strong>{{ i.author.username }}</strong> on {{ i.date_posted.strftime('%B %d, %Y') }}</small>
+                </p>
+                <p class="card-text">{{ i.content }}</p>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+{% endblock content%}
